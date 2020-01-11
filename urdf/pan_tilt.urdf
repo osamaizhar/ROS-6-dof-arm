@@ -1,19 +1,22 @@
 <?xml version="1.0"?>
-<robot name="my tilting robot">
-<link name="base_link">  <!--first link-->
+<robot name="pan_tilt>
+    
+    <link name="base_link"> 
+
+    
  <visual>
     
     <geometry>
      <cylinder radius="0.2" length="0.01"/>
     </geometry>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
-    <material name="black"><!--yellow tha before :)-->
+    <material name="black">
      <color rgba="1 1 0 1"/>   
     </material>
  </visual>
 </link>
 
-<joint name="pan_joint" type="revolute"> <!--1st joint-->
+<joint name="pan_joint" type="revolute"> 
     <parent link="base_link"/>
     <child link="pan_link"/>
     <origin xyz="0 0 0.1"/>
@@ -35,14 +38,14 @@
     
 </link>
 
-<joint name="tilt_joint" type="revolute"> <!--2nd Joint-->
+<joint name="tilt_joint" type="revolute">
     <parent link="pan_link"/>
     <child link="tilt_link"/>
     <origin xyz="0.0 0.0 0.2"/>
     <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
-<link name="tit_link">
+<link name="tilt_link">
  <visual>
      <geometry>
          <cylinder radius="0.04" length="0.4"/>
